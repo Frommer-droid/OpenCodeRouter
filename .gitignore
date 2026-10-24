@@ -1,0 +1,34 @@
+private/
+cache/
+logs/
+OpenCodeRouter.config.json
+.venv/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+*.egg-info/
+*.log
+/settings.json
+/OpenCodeRouter/
+/Build_Tools/build/
+/Build_Tools/dist/
+/Build_Tools/BUILD_AUDIT.json
+
+# Credentials and local tooling
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.coverage
+htmlcov/
+
+# Local working notes (retained on disk, not published)
+/docs/REPOSITORY_GUIDE.md
+/.pytest_*/
+
+/clash-admin.cjs
+/extend-global.cjs
+/Rollback.ps1
+/tests/Global.Tests.cjs

@@ -1,0 +1,44 @@
+[project]
+name = "opencode-router-gui"
+version = "0.3.4"
+description = "Windows GUI for selecting the dedicated OpenCode route in Clash Verge Rev"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+dependencies = [
+    "PySide6>=6.8,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=6.16,<7",
+    "pytest>=8,<10",
+    "ruff>=0.12,<1",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = [
+    ".git",
+    ".venv",
+    ".pytest_cache",
+    ".ruff_cache",
+    "cache",
+    "logs",
+    "private",
+    "Build_Tools/build",
+    "Build_Tools/dist",
+    "OpenCodeRouter",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

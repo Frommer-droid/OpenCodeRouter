@@ -1,0 +1,37 @@
+# Fragment for an EXISTING working Clash Verge Rev / Mihomo profile.
+# Not a subscription, not a complete profile, not a blind Merge replacement.
+# Merge object keys; APPEND group/listener; INSERT the rule as documented.
+mode: rule
+find-process-mode: strict
+
+# Prefer Clash Verge Rev's TUN/service controls for these settings.
+# Keep an already-working TUN stack and DNS configuration if present.
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  auto-detect-interface: true
+
+profile:
+  store-selected: true
+
+proxy-groups:
+  - name: OpenCode-Location
+    type: select
+    proxies:
+      # Replace with exact location direction names from your subscription.
+      # Named country fallback groups may be kept intact; never expand them.
+      # Do not put DIRECT, REJECT, broad automatic groups or this group here.
+      - YOUR-EXISTING-NODE-1
+      - YOUR-EXISTING-NODE-2
+
+listeners:
+  - name: OpenCode-Test-Local
+    type: http
+    listen: 127.0.0.1
+    port: 7900
+    proxy: OpenCode-Location
+
+rules:
+  # Insert before MATCH and general process/port rules; retain other rules.
+  - PROCESS-NAME,opencode.exe,OpenCode-Location

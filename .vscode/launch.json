@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "OpenCode Router: .venv",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\OpenCodeRouter.pyw",
+      "python": "${workspaceFolder}\\.venv\\Scripts\\pythonw.exe",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "justMyCode": true
+    }
+  ]
+}
